@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <!--BASE LINK-->
+  <link
+    name="base_link">
+  </link>
+
+  <!--BODY LINK-->
+  <link
+    name="body_link">
+    <inertial>
+      <origin
+        xyz="0.186415105716513 0.000101085633360656 2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="1.5353319244313" />
+      <inertia
+        ixx="0.00802378289538806"
+        ixy="1.00748244072014E-05"
+        ixz="-3.46725970451043E-20"
+        iyy="0.016304209429724"
+        iyz="-1.8435318670307E-20"
+        izz="0.0242257241981229" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/body_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.168627450980392 0.168627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/body_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <!--BODY JOINT-->
+  <joint
+    name="body_joint"
+    type="fixed">
+    <origin
+      xyz="-0.05 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="body_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+  <!--LEFT WHEEL LINK-->
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 2.77555756156289E-17 -7.04731412115578E-19"
+        rpy="0 0 0" />
+      <mass
+        value="0.292594195287495" />
+      <inertia
+        ixx="0.000459027566459344"
+        ixy="1.32348898008484E-20"
+        ixz="-3.84638984837158E-20"
+        iyy="0.000459027566459344"
+        iyz="-5.7902642878712E-21"
+        izz="0.00086969149964065" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <!--LEFT WHEEL JOINT-->
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.05 0.1175 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <!--RIGHT WHEEL LINK-->
+  <link
+    name="right_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 0 2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.29259" />
+      <inertia
+        ixx="0.00045903"
+        ixy="-4.2766E-20"
+        ixz="5.612E-20"
+        iyy="0.00045903"
+        iyz="-6.6443E-21"
+        izz="0.00086969" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.039216 0.4902 0.7098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <!--RIGHT WHEEL JOINT-->
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.05 -0.1175 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="right_wheel_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+  <!--CASTER WHEEL LINK-->
+  <link
+    name="caster_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/caster_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.34118 0.83922 0.41176 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/caster_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+ 
+<!--CASTER WHEEL JOINT-->
+  <joint
+    name="caster_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0.27 0 -0.01"
+      rpy="0 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="caster_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
