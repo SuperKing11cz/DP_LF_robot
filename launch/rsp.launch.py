@@ -10,7 +10,7 @@ def generate_launch_description():
     package_name = "robot_package"
     pkg_share = get_package_share_directory(package_name)
     # Get the path to the URDF file
-    xacro_file = os.path.join(pkg_share, 'urdf', 'robot.xacro')
+    xacro_file = os.path.join(pkg_share, 'urdf', '3dmodel_core.xacro')
     
     # Process the Xacro file
     robot_description_config = xacro.process_file(xacro_file)

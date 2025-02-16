@@ -1,5 +1,5 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetLaunchConfiguration, ExecuteProcess
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetLaunchConfiguration, ExecuteProcess, SetEnvironmentVariable
 from launch_ros.actions import Node
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ament_index_python.packages import get_package_share_directory
@@ -7,6 +7,8 @@ from launch.substitutions import LaunchConfiguration
 import os
 
 def generate_launch_description():
+
+    # Cesta k robot_package balíčku a world souboru
     package_name = 'robot_package'
     pkg_share = get_package_share_directory(package_name)
     world_file = os.path.join(pkg_share, 'worlds', 'my_world.sdf')
@@ -23,18 +25,26 @@ def generate_launch_description():
             description='Použít simulovaný čas, pokud je true'
         ),
 
+        # Aby Gazebo našel modely
+        SetEnvironmentVariable(
+            name='GZ_SIM_RESOURCE_PATH',
+            value=os.path.expanduser('~/dp2025_ws/src/')
+        ),
+
+        # Deklarace argumentu pro world soubor
         DeclareLaunchArgument(
             name='world',
             default_value=world_file,
             description='Path to the world file to load'
         ),
         
+        # Spuštění Gazebo
         ExecuteProcess(
             cmd=['gz', 'sim', LaunchConfiguration('world')],
             output='screen'
         ),
 
-        # Include the rsp.launch.py file
+        # Spuštění rsp_launch_file.py (robot_state_publisher a joint_state_publisher)
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(rsp_launch_file)
         ),
