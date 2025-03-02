@@ -2,4 +2,6 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="line_following_robot">
 
     <xacro:include filename="lf_robot.urdf.xacro" />
+    <xacro:include filename="laser.xacro" />
+    <xacro:include filename="3dmodel_gz_control.xacro" />
 </robot>
