@@ -1,0 +1,35 @@
+- ros_topic_name: "scan"
+  gz_topic_name: "/scan"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: BIDIRECTIONAL  # BIDIRECTIONAL or ROS_TO_GZ
+
+- ros_topic_name: "ir1"
+  gz_topic_name: "/ir1"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: BIDIRECTIONAL  # BIDIRECTIONAL or ROS_TO_GZ
+
+- ros_topic_name: "ir2"
+  gz_topic_name: "/ir2"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: BIDIRECTIONAL  # BIDIRECTIONAL or ROS_TO_GZ
+
+- ros_topic_name: "ir3"
+  gz_topic_name: "/ir3"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: BIDIRECTIONAL  # BIDIRECTIONAL or ROS_TO_GZ
+
+- ros_topic_name: "ir4"
+  gz_topic_name: "/ir4"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: BIDIRECTIONAL  # BIDIRECTIONAL or ROS_TO_GZ
+
+- ros_topic_name: "cmd_vel"
+  gz_topic_name: "/cmd_vel"
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "gz.msgs.Twist"
+  direction: BIDIRECTIONAL  # BIDIRECTIONAL or ROS_TO_GZ

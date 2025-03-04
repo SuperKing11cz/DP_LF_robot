@@ -37,6 +37,20 @@
         <origin xyz="-0.1 0 0"/>
     </joint>
 
+    <link name="cylinder_sensor">
+        <visual>
+            <geometry>
+                <box size="0.2 0.2 0.2"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="cylinder_link" type="fixed">
+        <parent link="base_link"/>
+        <child link="cylinder_sensor"/>
+        <origin xyz="-0.8 0 0.5" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
     <!--BODY LINK-->
     <link name="body_link">
         <visual>

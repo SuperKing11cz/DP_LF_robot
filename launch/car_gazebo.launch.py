@@ -11,7 +11,7 @@ def generate_launch_description():
     # Cesta k robot_package balíčku a world souboru
     package_name = 'robot_package'
     pkg_share = get_package_share_directory(package_name)
-    world_file = os.path.join(pkg_share, 'worlds', 'my_world.sdf')
+    world_file = os.path.join(pkg_share, 'worlds', 'track.sdf')
 
     # Cesty k důležitým souborům
     gazebo_launch_file = os.path.join(get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')

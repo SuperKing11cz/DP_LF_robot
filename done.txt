@@ -1,0 +1,10 @@
+Delam skript na bridge - nova slozka config s config filem pro bridge - zahrnout do setup.py
+
+tedka delam svet udelal jsem si v solidu track vsecko bere gazebo v metrech takze je nutne tohle --->
+
+Your solution seems to be the easiest one, to specify a scaling factor for the mesh on SDF, from mm to m for example:
+
+<mesh>
+  <uri>model://model_name/meshes/your_mesh.stl</uri>
+  <scale>0.001 0.001 0.001</scale>
+</mesh>

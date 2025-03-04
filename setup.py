@@ -19,6 +19,7 @@ setup(
         (os.path.join('share', package_name, 'meshes'), glob('meshes/*.STL')),
         (os.path.join('share', package_name, 'worlds'), glob('worlds/*.world')),
         (os.path.join('share', package_name, 'worlds'), glob('worlds/*.sdf')),
+        (os.path.join('share', package_name, 'config'), glob('config/*.yaml')),
         
     ],
     install_requires=['setuptools'],
