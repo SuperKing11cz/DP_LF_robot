@@ -42,7 +42,6 @@ class LineFollower(Node):
         
         # Thresholds for detecting the line
         line_detected = 0.15
-        no_line = 0.16
         
         ir1_detects = self.ir1 < line_detected
         ir2_detects = self.ir2 < line_detected
@@ -55,12 +54,12 @@ class LineFollower(Node):
             cmd.angular.z = 0.0
         elif ir1_detects:
             # Turn left
-            cmd.linear.x = 0.1
-            cmd.angular.z = -0.3
+            cmd.linear.x = 0.2
+            cmd.angular.z = -0.6
         elif ir4_detects:
             # Turn right
-            cmd.linear.x = 0.1
-            cmd.angular.z = 0.3
+            cmd.linear.x = 0.2
+            cmd.angular.z = 0.6
         else:
             # Stop if no valid readings
             cmd.linear.x = 0.0

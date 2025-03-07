@@ -7,7 +7,7 @@
     <update_rate>10</update_rate>
     <topic>scan</topic>
     <always_on>true</always_on>
-    <gz_frame_id>laser_frame</gz_frame_id>
+    <gz_frame_id>lidar_link</gz_frame_id>
     <visualize>true</visualize>
     <lidar>
       <scan>
@@ -26,13 +26,13 @@
   </sensor>
 </gazebo>
 
-<gazebo reference="IR_sensor1_link">
-  <sensor name="IR1" type="gpu_lidar">
+<gazebo reference="IR_LLs_link">
+  <sensor name="Left left sensor" type="gpu_lidar">
     <pose>0 0 0 0 0 0</pose>
     <update_rate>10</update_rate>
-    <topic>ir1</topic>
+    <topic>lls_ir</topic>
     <always_on>true</always_on>
-    <gz_frame_id>IR_sensor1_link</gz_frame_id>
+    <gz_frame_id>IR_LLs_link</gz_frame_id>
     <visualize>true</visualize>
     <lidar>
       <scan>
@@ -51,13 +51,13 @@
   </sensor>
 </gazebo>
 
-<gazebo reference="IR_sensor2_link">
-  <sensor name="IR2" type="gpu_lidar">
+<gazebo reference="IR_LCs_link">
+  <sensor name="Left center sensor" type="gpu_lidar">
     <pose>0 0 0 0 0 0</pose>
     <update_rate>10</update_rate>
-    <topic>ir2</topic>
+    <topic>lcs_ir</topic>
     <always_on>true</always_on>
-    <gz_frame_id>IR_sensor2_link</gz_frame_id>
+    <gz_frame_id>IR_LCs_link</gz_frame_id>
     <visualize>true</visualize>
     <lidar>
       <scan>
@@ -76,13 +76,13 @@
   </sensor>
 </gazebo>
 
-<gazebo reference="IR_sensor3_link">
-  <sensor name="IR3" type="gpu_lidar">
+<gazebo reference="IR_Cs_link">
+  <sensor name="CS sensor" type="gpu_lidar">
     <pose>0 0 0 0 0 0</pose>
     <update_rate>10</update_rate>
-    <topic>ir3</topic>
+    <topic>cs_ir</topic>
     <always_on>true</always_on>
-    <gz_frame_id>IR_sensor3_link</gz_frame_id>
+    <gz_frame_id>IR_Cs_link</gz_frame_id>
     <visualize>true</visualize>
     <lidar>
       <scan>
@@ -101,13 +101,38 @@
   </sensor>
 </gazebo>
 
-<gazebo reference="IR_sensor4_link">
-  <sensor name="IR4" type="gpu_lidar">
+<gazebo reference="IR_RCs_link">
+  <sensor name="Right center sensor" type="gpu_lidar">
     <pose>0 0 0 0 0 0</pose>
     <update_rate>10</update_rate>
-    <topic>ir4</topic>
+    <topic>rcs_ir</topic>
     <always_on>true</always_on>
-    <gz_frame_id>IR_sensor4_link</gz_frame_id>
+    <gz_frame_id>IR_RCs_link</gz_frame_id>
+    <visualize>true</visualize>
+    <lidar>
+      <scan>
+        <horizontal>
+          <samples>1</samples>
+          <min_angle>0</min_angle>
+          <max_angle>0</max_angle>
+        </horizontal>
+      </scan>
+      <range>
+        <min>0.06</min>
+        <max>12.0</max>
+        <resolution>0.01</resolution>
+      </range>
+    </lidar>
+  </sensor>
+</gazebo>
+
+<gazebo reference="IR_RRs_link">
+  <sensor name="Right right sensor" type="gpu_lidar">
+    <pose>0 0 0 0 0 0</pose>
+    <update_rate>10</update_rate>
+    <topic>rrs_ir</topic>
+    <always_on>true</always_on>
+    <gz_frame_id>IR_RRs_link</gz_frame_id>
     <visualize>true</visualize>
     <lidar>
       <scan>

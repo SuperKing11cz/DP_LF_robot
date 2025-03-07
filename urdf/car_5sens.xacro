@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="car_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- BASE LINK -->
+  <link
+    name="base_link">
+  </link>
+
+  <!-- BODY LINK -->
+  <link
+    name="body_link">
+    <inertial>
+      <origin
+        xyz="0.363487032097431 1.45716771982052E-16 -0.0150353674101796"
+        rpy="0 0 0" />
+      <mass
+        value="12.7942251163427" />
+      <inertia
+        ixx="0.269709930436112"
+        ixy="-2.33332519298872E-16"
+        ixz="0.0151483688299552"
+        iyy="0.561368980034079"
+        iyz="-4.27879088000623E-19"
+        izz="0.80925896468423" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/body_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.168627450980392 0.168627450980392 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/body_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- BODY JOINT -->
+  <joint
+    name="body_joint"
+    type="fixed">
+    <origin
+      xyz="-0.1 0 0.17"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="body_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <!-- LEFT WHEEL LINK -->
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 5.55111512312578E-17 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="2.34075356229996" />
+      <inertia
+        ixx="0.014688882126699"
+        ixy="-3.91419097892488E-18"
+        ixz="1.60060213252104E-18"
+        iyy="0.014688882126699"
+        iyz="1.32275826079477E-19"
+        izz="0.0278301279885008" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- LEFT WHEEL JOINT -->
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.1 0.235 -0.02"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+
+  <!-- RIGHT WHEEL LINK -->
+  <link
+    name="right_wheel_link">
+    <inertial>
+      <origin
+        xyz="-1.11022302462516E-16 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="2.34075356229996" />
+      <inertia
+        ixx="0.014688882126699"
+        ixy="-2.96225971269112E-18"
+        ixz="-5.05633527852181E-19"
+        iyy="0.014688882126699"
+        iyz="-7.45022564958592E-19"
+        izz="0.0278301279885008" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- RIGHT WHEEL JOINT -->
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.1 -0.235 -0.02"
+      rpy="1.5708 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="right_wheel_link" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+  <!-- CASTER WHEEL LINK -->
+  <link
+    name="caster_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/caster_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.34118 0.83922 0.41176 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+      <!--
+        <mesh
+          filename="package://robot_package/meshes/caster_wheel_link.STL" />
+        -->
+        <sphere
+          radius="0.15"/>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.001</mu>
+              <mu1>0.001</mu1>
+              <mu2>0.001</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- CASTER WHEEL JOINT -->
+  <joint
+    name="caster_wheel_joint"
+    type="fixed">
+    <origin
+      xyz="0.53 0 -0.03"
+      rpy="0 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="caster_wheel_link" />
+    <axis
+      xyz="0 0 0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  
+  <!-- CASTER WHEEL NULOVE TRENI -->
+  <gazebo reference='caster_wheel_link'>
+    <mu>0.0</mu>
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+  </gazebo>
+
+  <!-- LIDAR LINK -->
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.01" />
+      <inertia
+        ixx="0.001761"
+        ixy="0"
+        ixz="-2.9827E-36"
+        iyy="0.001761"
+        iyz="5.8775E-36"
+        izz="0.0032799" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- LIDAR JOINT -->
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.125 0 0.17"
+      rpy="0 0 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <!-- IR LLs LINK -->
+  <link
+    name="IR_LLs_link">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 -2.77555756156289E-17 -0.01"
+        rpy="0 0 0" />
+      <mass
+        value="0.00628318530717958" />
+      <inertia
+        ixx="3.66519142918809E-07"
+        ixy="0"
+        ixz="-1.21420552004304E-39"
+        iyy="3.66519142918809E-07"
+        iyz="1.14794370197489E-39"
+        izz="3.14159265358979E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/IR_sensor1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/IR_sensor1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- IR LLs JOINT -->
+  <joint
+    name="IR_LLs_joint"
+    type="fixed">
+    <origin
+      xyz="0.7 -0.12 -0.02"
+      rpy="0 1.5708 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="IR_LLs_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <!-- IR LCs LINK -->
+  <link
+    name="IR_LCs_link">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 -0.01"
+        rpy="0 0 0" />
+      <mass
+        value="0.00628318530717958" />
+      <inertia
+        ixx="3.66519142918809E-07"
+        ixy="0"
+        ixz="-1.21420552004304E-39"
+        iyy="3.66519142918809E-07"
+        iyz="1.14794370197489E-39"
+        izz="3.14159265358979E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/IR_sensor1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/IR_sensor1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- IR LCs JOINT -->
+  <joint
+    name="IR_LCs_joint"
+    type="fixed">
+    <origin
+      xyz="0.7 -0.06 -0.02"
+      rpy="0 1.5708 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="IR_LCs_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <!-- IR RCs LINK -->
+  <link
+    name="IR_RCs_link">
+    <inertial>
+      <origin
+        xyz="0 -3.46944695195361E-18 -0.01"
+        rpy="0 0 0" />
+      <mass
+        value="0.00628318530717958" />
+      <inertia
+        ixx="3.66519142918809E-07"
+        ixy="3.98272977783113E-55"
+        ixz="-1.21420552004304E-39"
+        iyy="3.66519142918809E-07"
+        iyz="-1.53804773250129E-38"
+        izz="3.14159265358979E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/IR_sensor1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/IR_sensor1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- IR RCs JOINT -->
+  <joint
+    name="IR_RCs_joint"
+    type="fixed">
+    <origin
+      xyz="0.7 0.06 -0.02"
+      rpy="0 1.5708 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="IR_RCs_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <!-- IR RRs LINK -->
+  <link
+    name="IR_RRs_link">
+    <inertial>
+      <origin
+        xyz="5.55111512312578E-17 0 -0.01"
+        rpy="0 0 0" />
+      <mass
+        value="0.00628318530717958" />
+      <inertia
+        ixx="3.66519142918809E-07"
+        ixy="0"
+        ixz="-1.21420552004304E-39"
+        iyy="3.66519142918809E-07"
+        iyz="1.14794370197489E-39"
+        izz="3.14159265358979E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/IR_sensor1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/IR_sensor1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- IR RRs JOINT -->
+  <joint
+    name="IR_RRs_joint"
+    type="fixed">
+    <origin
+      xyz="0.7 0.12 -0.02"
+      rpy="0 1.5708 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="IR_RRs_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <!-- IR Cs LINK -->
+  <link
+    name="IR_Cs_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.01"
+        rpy="0 0 0" />
+      <mass
+        value="0.00628318530717958" />
+      <inertia
+        ixx="3.66519142918809E-07"
+        ixy="0"
+        ixz="-1.21420552004304E-39"
+        iyy="3.66519142918809E-07"
+        iyz="1.14794370197489E-39"
+        izz="3.14159265358979E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/IR_sensor1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_package/meshes/IR_sensor1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- IR Cs JOINT -->
+  <joint
+    name="IR_Cs_joint"
+    type="fixed">
+    <origin
+      xyz="0.7 0 -0.02"
+      rpy="0 1.5708 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="IR_Cs_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
