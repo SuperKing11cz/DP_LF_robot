@@ -19,7 +19,7 @@
       </scan>
       <range>
         <min>0.06</min>
-        <max>12.0</max>
+        <max>5.0</max>
         <resolution>0.01</resolution>
       </range>
     </lidar>
@@ -44,7 +44,7 @@
       </scan>
       <range>
         <min>0.06</min>
-        <max>12.0</max>
+        <max>1.0</max>
         <resolution>0.01</resolution>
       </range>
     </lidar>
@@ -69,7 +69,7 @@
       </scan>
       <range>
         <min>0.06</min>
-        <max>12.0</max>
+        <max>1.0</max>
         <resolution>0.01</resolution>
       </range>
     </lidar>
@@ -94,7 +94,7 @@
       </scan>
       <range>
         <min>0.06</min>
-        <max>12.0</max>
+        <max>1.0</max>
         <resolution>0.01</resolution>
       </range>
     </lidar>
@@ -119,7 +119,7 @@
       </scan>
       <range>
         <min>0.06</min>
-        <max>12.0</max>
+        <max>1.0</max>
         <resolution>0.01</resolution>
       </range>
     </lidar>
@@ -144,7 +144,7 @@
       </scan>
       <range>
         <min>0.06</min>
-        <max>12.0</max>
+        <max>1.0</max>
         <resolution>0.01</resolution>
       </range>
     </lidar>

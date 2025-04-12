@@ -66,7 +66,7 @@ class LineFollower(Node):
             cmd.angular.z = 0.0        
         self.vel_pub.publish(cmd)
 
-        if self.ir1<line_detected:
+"""         if self.ir1<line_detected:
             self.get_logger().info(f"IR1: {"1"}")
         else:
             self.get_logger().info(f"IR1: {"0"}")
@@ -82,7 +82,7 @@ class LineFollower(Node):
             self.get_logger().info(f"IR4: {"1"}")
         else:
             self.get_logger().info(f"IR4: {"0"}")
-
+ """
 def main(args=None):
     rclpy.init(args=args)
     node = LineFollower()

@@ -8,3 +8,16 @@ Your solution seems to be the easiest one, to specify a scaling factor for the m
   <uri>model://model_name/meshes/your_mesh.stl</uri>
   <scale>0.001 0.001 0.001</scale>
 </mesh>
+
+
+doporucil bych delat kolize pro kola atd jako jednoduchy tvar ne jako stl
+
+
+v control_car.launch.py kde definuju node robot_controller_spawner a joint state broadcaster spawner
+musi byt v argumentech to prvni hodnota stejna podle nazvu v YAML filu
+
+
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -p stamped:=true -r /cmd_vel:=/diff_drive_base_controller/cmd_vel
+
+na tohle bacha u ros2_control Cannot echo topic '/diff_drive_base_controller/cmd_vel', as it contains more than one type: [geometry_msgs/msg/Twist, geometry_msgs/msg/TwistStamped]
+zmin to tam

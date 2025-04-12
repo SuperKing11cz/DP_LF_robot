@@ -50,12 +50,12 @@ class LineFollower(Node):
         threshold = 0.15  # Distance threshold for detecting the line
         
         # Binary activation: 1 if the sensor detects the line (below threshold), else 0
-        #sensor_activations = [1 if val < threshold else 0 for val in self.sensor_values]
-        for index in range(0, len(sensor_activations)):
-            if sensor_activations[index] < threshold:
-                sensor_activations[index] = 1
-            else:
-                sensor_activations[index] = 0
+        sensor_activations = [1 if val < threshold else 0 for val in self.sensor_values]
+        #for index in range(0, len(sensor_activations)):
+        #    if sensor_activations[index] < threshold:
+        #        sensor_activations[index] = 1
+        #    else:
+        #        sensor_activations[index] = 0
 
         # Weights for position error calculation
         weights = [-2, -1, 0, 1, 2]
